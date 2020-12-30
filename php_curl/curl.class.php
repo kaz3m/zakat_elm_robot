@@ -3,6 +3,10 @@
 class telegramRobotSeriesCurl 
 {
 
+    /*
+        
+
+    */
     public function doCurl($url,$method='GET', $post_var_array='')
     {
 
@@ -38,11 +42,12 @@ class telegramRobotSeriesCurl
         {
 
             $ch = curl_init();
+
             curl_setopt($ch, CURLOPT_URL,$url);
             curl_setopt($ch, CURLOPT_POST, 0);
 
             curl_setopt($ch, CURLOPT_POSTFIELDS, 
-                     http_build_query($post_var_array);
+                     http_build_query($post_var_array));
             
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
