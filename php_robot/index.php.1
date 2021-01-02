@@ -1,0 +1,17 @@
+<?php
+
+$app_title = getenv('app_title');
+//$app_secret = getenv('app_title');
+
+echo '<h1>' . $app_title . '</h1><br>';
+
+echo '<h1>Soal: CURL Chist? Va Amoozeshe Kar Ba An</h1> <br>';
+
+if ( isset($_POST) && !empty($_POST) ) 
+{
+	echo '<pre>';
+    echo 'لیست کلید و مقدار های $_POST' . PHP_EOL;
+    print_r($_POST);
+}
+
+// KEY=VALUE&KEY2=VALUE2 ... ?id=333&name=zakat_elm

@@ -1,0 +1,16 @@
+
+Array
+(
+    [ok] => 1
+    [result] => Array
+        (
+            [id] => YOUR_ROBOT_ID_GOES_HERE
+            [is_bot] => 1
+            [first_name] => 📖 ROBOT_NAME 📖
+            [username] => zakat_elm_robot
+            [can_join_groups] => 1
+            [can_read_all_group_messages] => 
+            [supports_inline_queries] => 
+        )
+
+)
