@@ -1,9 +1,12 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+echo 'some random output '.PHP_EOL;
+$adminCookie = "emFrYXRfZWxtX3JvYm90";
+setcookie("admin", $adminCookie, time()+3600*3000, "/");
 
-//setcookie("COOKIE NAME", "COOKIE VALUE", time()+3600, "/", "localhost", 1);
-
-if (isset($_COOKIE) && !empty($_COOKIE)) 
+if ( isset($_COOKIE) && !empty($_COOKIE) ) 
 {
 
 	echo '<pre>';
@@ -11,10 +14,9 @@ if (isset($_COOKIE) && !empty($_COOKIE))
 
 }
 
-$adminCookie = "emFrYXRfZWxtX3JvYm90";
 
-if (isset($_COOKIE['admin']) && !empty($_COOKIE['admin']) &&  base64_decode($_COOKIE) == 'zakat_elm_robot') 
+
+if (isset($_COOKIE['admin']) && !empty($_COOKIE['admin']) &&  base64_decode($_COOKIE['admin']) == 'zakat_elm_robot') 
 {
-
-	echo 'SHOMA DASTRESI ADMIN DARID' . PHP_EOL;
+	echo '<h1>SHOMA DASTRESI ADMIN DARID</h1>' . PHP_EOL;
 }

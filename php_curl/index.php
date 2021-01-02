@@ -15,7 +15,11 @@ $arrayVars = array(
     'name' => 'zakat_elm_robot',
     'version' => '1.0'
 );
-$curl = $curl->doCurl("https://zakat-elm.herokuapp.com/","POST", $arrayVars);
+//$curl = $curl->doCurl("https://zakat-elm.herokuapp.com/","POST", $arrayVars);
 
 
-print_r($curl);
+//print_r($curl);
+
+
+
+
