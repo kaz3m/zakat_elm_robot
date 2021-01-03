@@ -5,6 +5,9 @@ require 'init.php';
 
 app::setName($app_name);
 app::setToken($admin_password);
+
+
+
 if ( $_SERVER['REQUEST_URI'] == '/'.$bot_token )
 {
     $telegram = new TelegramBot($bot_token, $bot_name);
@@ -62,7 +65,7 @@ if ( app::access() )
         }
         default:
         {
-            exit('<h1>dar hale enteghal</h1><meta http-equiv="refresh" content="5; URL='.SITE_URL.'ZAKAT_ELM_ADMIN" />');
+            exit('<h1>dar hale enteghal✌️</h1><meta http-equiv="refresh" content="5; URL='.SITE_URL.'ZAKAT_ELM_ADMIN" />');
         }
     } // switch
     

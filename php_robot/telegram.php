@@ -73,6 +73,7 @@ baraye didane video hai amoozeshi va elmi 👇 👇
                         'chat_id' => $chat_id,
                         'text' => $responseText
                     ]);
+                    
                     $responseText = "•┈┈••✾ ☘ 🕊🕊🕊 ☘ ✾••┈┈• 
 #moshtarak_shavid 
 
@@ -96,6 +97,22 @@ https://www.aparat.com/zakate_elm_nashr
                     $this->sendMessage([
                         'chat_id' => $chat_id,
                         'text' => json_encode($update)
+                    ]);
+                    
+                break;
+                case '/time':
+
+                    $this->sendMessage([
+                        'chat_id' => $chat_id,
+                        'text' => 'time namayesh dade mishavad'
+                    ]);
+                    
+                break;
+                case '/btc':
+
+                    $this->sendMessage([
+                        'chat_id' => $chat_id,
+                        'text' => 'gheymate bitcoin namayesh dade mishavad'
                     ]);
                     
                 break;

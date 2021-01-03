@@ -1,5 +1,9 @@
 <?php 
-include 'init.php';
+
+
+
+$app_name = getenv('HEROKU_APP_NAME');
+$admin_password = getenv('ZAKAT_ELM_PASSWORD');
 
 if ( isset($_POST['password']) && !empty($_POST['password']) ) 
 {

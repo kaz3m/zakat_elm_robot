@@ -3,7 +3,7 @@ require '../init.php';
 $user = new userDetails();
 if (!$user->isAdminLoggedIn()) 
 {
-    exit('<h1>dar hale enteghal</h1><meta http-equiv="refresh" content="5; URL='.SITE_URL.'" />');
+    exit('<h1>dar hale enteghal✌️</h1><meta http-equiv="refresh" content="5; URL='.SITE_URL.'" />');
     
 }
 ?>
