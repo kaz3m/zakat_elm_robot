@@ -1,6 +1,11 @@
 <?php
 
-
+/*
+    Being Thankful Towards Knowledge is to share it ...
+    -Imam Ali
+    coded by: Kazem
+    https://github.com/kaz3m/zakat_elm_robot
+*/
 require 'init.php';
 
 app::setName($app_name);

@@ -1,8 +1,11 @@
 # Telegram zakat_elm_robot Tutorials Lesson Files
 
  📽️ سری ویدئو های آموزش ساخت 🤖 ربات تلگرام 🤖   👊 مقدماتی تا پیشرفته
+
 version 1.0
+
 nokte:
+
 in script bayad rooye heroku deploy shavad dar gheir in soorat bayad
 ```
 /PATH/TO/APP/app.php

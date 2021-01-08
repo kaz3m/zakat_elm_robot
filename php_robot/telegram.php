@@ -1,6 +1,12 @@
 <?php
 class TelegramBot
 {
+    /*
+        Being Thankful Towards Knowledge is to share it ...
+        -Imam Ali
+        coded by: Kazem
+        https://github.com/kaz3m/zakat_elm_robot
+    */
     private $uri = 'https://api.telegram.org/bot';
     private $name = '';
     private $admin_list = [];
@@ -59,38 +65,22 @@ class TelegramBot
             $message_id = $message['message_id'];
             $from_id = $user_id = $message['from']['id'];
             $chat_id = $message['chat']['id'];
-
+            $fromArray = $message['from'];
             $text = $this->filterText($message['text']);
 
             switch($text)
             {
                 case '/start':
-                    $responseText = "•┈┈••✾ ☘ 🕊🕊🕊 ☘ ✾••┈┈•
-🤖: be robote zakat_elm_robot khosh amadid ❤️
-baraye didane video hai amoozeshi va elmi 👇 👇
-•┈┈••✾ ☘ 🕊🕊🕊 ☘ ✾••┈┈•";
+                
+                $doLogs = new doLogs($from_id, $chat_id, $fromArray, 'viewLis');
+                $doLogs->addUserToDB();
+                    $tgPost = new telegramPostBuilder();
+                    $tgPost = $tgPost->buildPost($tgPost->startPostContent, 'salavat');
                     $this->sendMessage([
                         'chat_id' => $chat_id,
-                        'text' => $responseText
+                        'text' => $tgPost 
                     ]);
-                    
-                    $responseText = "•┈┈••✾ ☘ 🕊🕊🕊 ☘ ✾••┈┈• 
-#moshtarak_shavid 
 
-__..::📽️🎞️▶️👇::..__
-
-https://www.youtube.com/channel/UClyMb3gVs_X01jJoDhrChPw/about
-
-__..::📽️🎞️▶️👇::..__
-
-https://www.aparat.com/zakate_elm_nashr
-
-•┈┈••✾ ☘ 🕊🕊🕊 ☘ ✾••┈┈•";
-                    $this->sendMessage([
-                        'chat_id' => $chat_id,
-                        'text' => $responseText
-                    ]);
-                    
                 break;
                 case '/debug':
 
@@ -102,17 +92,35 @@ https://www.aparat.com/zakate_elm_nashr
                 break;
                 case '/time':
 
-                    $this->sendMessage([
+                    $tgPost = new telegramPostBuilder();
+                    $imgUrl = $tgPost->getImage();
+                    $tgPost = $tgPost->buildTodayPost();
+
+                    $this->sendPhoto([
                         'chat_id' => $chat_id,
-                        'text' => 'time namayesh dade mishavad'
+                        'photo' => $imgUrl,
+                        'caption' => $tgPost
                     ]);
                     
                 break;
                 case '/btc':
 
+                    $btcPrice = new displayBitcoinPrice();
+                    $btcPrice = $btcPrice->returnBtcEuro();
+                    $dateStringYear  = jdate("Y");
+                    $dateStringMonth  = jdate("F");
+                    $dateStringDayName  = jdate("l");
+                    $dateStringDayNumber  = jdate("J");
+                    $todayString = "✅امروز ";
+                    $todayString .= PHP_EOL . $dateStringDayName . ' ' . $dateStringDayNumber . ' ' .  $dateStringMonth . ' ' . $dateStringYear;
+                    $postContent = $todayString . PHP_EOL . "💶 👇 قیمت بیت کوین به یورو 👇 💶" . PHP_EOL . PHP_EOL . '<b>' . $btcPrice . '</b>';
+                    $tgPost = new telegramPostBuilder();
+                    $tgPost = $tgPost->buildPost($postContent, 'salavat');
+
                     $this->sendMessage([
                         'chat_id' => $chat_id,
-                        'text' => 'gheymate bitcoin namayesh dade mishavad'
+                        'text' => $tgPost,
+                        'parse_mode' => 'HTML'
                     ]);
                     
                 break;
